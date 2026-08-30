@@ -1,0 +1,14 @@
+{
+  "name": "od11-webapp",
+  "version": "0.1.0",
+  "description": "Standalone web app to control an OD-11 speaker's volume and playback from a browser.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["od11"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {}
+}

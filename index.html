@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OD-11 Volume</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="card">
+  <h1>OD-11</h1>
+
+  <section id="setup" class="panel">
+    <label for="ip">Speaker IP address</label>
+    <input id="ip" type="text" placeholder="192.168.0.101" autocomplete="off" spellcheck="false">
+    <button id="connect">Connect</button>
+    <p class="hint">Stored only in this browser (localStorage) &mdash; never sent anywhere but to the speaker.</p>
+  </section>
+
+  <section id="controls" class="panel hidden">
+    <div id="status" class="status">Connecting&hellip;</div>
+
+    <div class="volume-row">
+      <span class="volume-label">🔈</span>
+      <input id="volume" type="range" min="0" max="100" value="0" disabled>
+      <span class="volume-label">🔊</span>
+    </div>
+    <div id="volumeValue" class="volume-value">&mdash;</div>
+
+    <button id="playpause" disabled>▶︎ / ⏸</button>
+
+    <button id="disconnect" class="link">Change speaker</button>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
