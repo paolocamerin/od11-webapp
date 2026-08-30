@@ -16,9 +16,9 @@ Your speaker's IP address is entered in the browser and stored only in `localSto
 node server.js
 ```
 
-Then open [http://localhost:8080](http://localhost:8080), enter your speaker's IP (e.g. `192.168.0.101`), and click **Connect**.
+Then open [http://localhost:8091](http://localhost:8091), enter your speaker's IP (e.g. `192.168.0.101`), and click **Connect**.
 
-Use a different port with `node server.js --port=3000`.
+Use a different port with `node server.js --port=3000` (useful if 8091 is already taken by something else on your machine).
 
 ## Project structure
 

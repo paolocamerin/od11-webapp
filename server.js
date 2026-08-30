@@ -16,7 +16,7 @@ function getArg(name, fallback) {
     return fallback;
 }
 
-const PORT = Number(getArg('--port', 8080));
+const PORT = Number(getArg('--port', 8091));
 const ROOT = __dirname;
 
 const CONTENT_TYPES = {
