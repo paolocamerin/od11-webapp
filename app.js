@@ -144,11 +144,11 @@ function connect(ip, isRetry) {
   });
 
   socket.addEventListener('error', () => {
-    setStatusChip('Disconnected', 'disconnected');
+    setStatusChip('disconnected', 'disconnected');
   });
 
   socket.addEventListener('close', () => {
-    setStatusChip('Disconnected', 'disconnected');
+    setStatusChip('disconnected', 'disconnected');
     setControlsEnabled(false);
     clearInterval(pingInterval);
     pingInterval = null;
