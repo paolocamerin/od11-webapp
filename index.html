@@ -2,35 +2,57 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#EDEBE8">
 <title>OD-11 Volume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main class="card">
-  <h1>OD-11</h1>
+<main class="app">
 
   <section id="setup" class="panel">
-    <label for="ip">Speaker IP address</label>
+    <label for="ip">speaker ip address</label>
     <input id="ip" type="text" placeholder="192.168.0.101" autocomplete="off" spellcheck="false">
-    <button id="connect">Connect</button>
-    <p class="hint">Stored only in this browser (localStorage) &mdash; never sent anywhere but to the speaker.</p>
+    <button id="connect">connect</button>
+    <p class="hint">stored only in this browser (localstorage) &mdash; never sent anywhere but to the speaker.</p>
   </section>
 
   <section id="controls" class="panel hidden">
-    <div id="status" class="status">Connecting&hellip;</div>
-
-    <div class="volume-row">
-      <span class="volume-label">🔈</span>
-      <input id="volume" type="range" min="0" max="100" value="0" disabled>
-      <span class="volume-label">🔊</span>
+    <div id="statusChip" class="status-chip" data-state="connecting">
+      <span id="statusText">connecting&hellip;</span>
     </div>
-    <div id="volumeValue" class="volume-value">&mdash;</div>
+    <div id="colorPicker" class="color-picker">
+      <button id="colorButton" class="color-button" type="button"
+              aria-haspopup="true" aria-expanded="false" aria-controls="palette"
+              aria-label="Dial colour"></button>
+      <div id="palette" class="palette hidden" role="radiogroup" aria-label="Dial colour"></div>
+    </div>
 
-    <button id="playpause" disabled>▶︎ / ⏸</button>
+    <div class="dial-block">
+      <div id="dial" class="dial disabled" role="slider" tabindex="-1"
+           aria-label="Volume" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <svg class="dial-svg" viewBox="0 0 220 220" aria-hidden="true">
+          <circle id="dialFace" class="dial-face" cx="110" cy="110" r="99"></circle>
+          <line id="dialIndicator" class="dial-indicator" x1="110" y1="28" x2="110" y2="18"></line>
+        </svg>
+        <div class="dial-center">
+          <div id="volumeValue" class="dial-value">&mdash;</div>
+        </div>
+      </div>
+    </div>
+<div id="button-group">
+    <button id="playpause" disabled aria-label="Play">
+      <i id="playpauseIcon" class="ph-fill ph-play" aria-hidden="true"></i>
+    </button>
 
-    <button id="disconnect" class="link">Change speaker</button>
-  </section>
+    <button id="disconnect" class="link">change speaker</button>
+
+</div>
+    </section>
 </main>
 <script src="app.js"></script>
 </body>
