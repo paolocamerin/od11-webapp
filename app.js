@@ -85,7 +85,7 @@ function updatePlayPauseAvailability() {
 
 function connect(ip, isRetry) {
   clearTimeout(reconnectTimeout);
-  setStatusChip(isRetry ? 'Reconnecting…' : 'Connecting…', 'connecting');
+  setStatusChip(isRetry ? 'reconnecting…' : 'connecting…', 'connecting');
   setControlsEnabled(false);
 
   socket = new WebSocket(`ws://${ip}/ws`);

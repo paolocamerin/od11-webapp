@@ -15,10 +15,14 @@
 <main class="app">
 
   <section id="setup" class="panel">
-    <label for="ip">speaker ip address</label>
-    <input id="ip" type="text" placeholder="192.168.0.101" autocomplete="off" spellcheck="false">
-    <button id="connect">connect</button>
+    <div class="setup-block">
+      <div class="field">
+        <label for="ip">speaker ip address</label>
+        <input id="ip" type="text" placeholder="192.168.0.101" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
     <p class="hint">stored only in this browser (localstorage) &mdash; never sent anywhere but to the speaker.</p>
+    <button id="connect">connect</button>
   </section>
 
   <section id="controls" class="panel hidden">
